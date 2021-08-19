@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1.p-2.mx-5= title
+  p
+    // Registration Form
+    form(method='POST' action='/register')
+        .form-floating.mx-5.py-2
+            input#username.form-control(type='text' placeholder='User Name' name='username' 
+            value=postdata && postdata.username)
+            label.form-label(for='username') User Name
+
+        .form-floating.mx-5.py-2
+            input#firstname.form-control(type='text' placeholder='First Name' name='firstname' 
+            value=postdata && postdata.firstname)
+            label.form-label(for='firstname') First Name
+
+        .form-floating.mx-5.py-2
+            input#lastname.form-control(type='text' placeholder='Last Name' name='lastname' 
+            value=postdata && postdata.lastname)
+            label.form-label(for='lastname') Last Name
+
+        .form-floating.mx-5.py-2
+            input#email.form-control(type='text' placeholder='Email' name='email' 
+            value=postdata && postdata.email)
+            label.form-label(for='email') Email
+
+        .form-floating.mx-5.py-2
+            input#phone.form-control(type='text' placeholder='Telephone' name='phone' 
+            value=postdata && postdata.phone)
+            label.form-label(for='phone') Telephone
+
+        .form-floating.mx-5.py-2
+            input#password.form-control(type='password' placeholder='Password' name='password' 
+            value=postdata && postdata.password)
+            label.form-label(for='password') Password 
+        .button.mx-5.py-2
+            button.btn.btn-outline-success.mx-1(type='submit') Register
+            // <button class="btn btn-outline-primary" type="submit">Register</button>
+            button.btn.btn-outline-secondary.mx-1(type='reset') Clear
+            <a href="/" class="btn btn-outline-danger mx-1" role="button">Close</a>

@@ -1,0 +1,33 @@
+nav.navbar.navbar-expand-lg.bg-dark.navbar-dark.py-3.mb-0.fixed-top
+        .container
+          a.navbar-brand(href='/')
+            img(src='/images/TE_Logo.png' width='300' height='75' alt='')
+          if currentUser
+              span.text-white Welcome: #{currentUser.username} (#{currentUser.role})
+          button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#temenu')
+            span.navbar-toggler-icon
+          #temenu.collapse.navbar-collapse
+            ul.navbar-nav.ms-auto
+              if currentUser && currentUser.role == "customer" 
+                li.nav-item
+                  a.nav-link.mt-2.text-lg.h5(href='/booking/bookings/' + + (currentUser && currentUser.userid)) My Bookings
+              if !currentUser 
+                li.nav-item
+                  a.nav-link.mt-2.text-lg.h5(href='/register') Register
+              li.nav-item
+                a.nav-link.mt-2.text-lg.h5(href='/package') Packages
+              if !currentUser || currentUser.role == 'customer'
+                li.nav-item
+                  a.nav-link.mt-2.h5(href='/contactus') Contact Us
+              if currentUser
+                li.nav-item
+                a.nav-link.mt-2.h5(href="/log-out") Log Out
+              else
+                li.nav-item
+                a.nav-link.mt-2.h5(href='login') Log In
+              if currentUser && currentUser.role == "manager"
+                li.nav-item
+                a.nav-link.mt-2.h5(href='/mgrData') Performance Data
+              if currentUser && currentUser.role == "agent"
+                li.nav-item
+                a.nav-link.mt-2.h5(href='/agentData') Performance Data

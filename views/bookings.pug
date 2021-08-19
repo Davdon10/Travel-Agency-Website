@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+    
+  .container
+    
+    h2.bg-warning Your Bookings With Travel Experts
+      if !bookings
+        h3 You don't have any bookings.
+      else 
+        .row
+          each booking in bookings
+            .card.col-sm-12
+              img.card-img-top.mx-auto(src=booking.PackageId.ImgPath style=" max-width:50px;")              
+              h5= booking.PackageId.PkgName
+              h6
+                | Package Description: #{booking.PackageId.PkgDesc}
+              h6
+                | Travelers : #{booking.TravelerCount}
+              h6
+                | Unit Price: #{booking.PackageId.PkgBasePrice}
+              h6
+                | Total Price: #{booking.PackageId.PkgBasePrice * booking.TravelerCount}
+              p.card-text
+                form(action='/booking/cancel/'+booking._id method='get')
+                  .col-sm-12
+                    button.btn.btn-danger.col-12(type='submit') Cancel
+                  input(type='hidden' name="CustomerId" value=booking && booking.CustomerId)
+              

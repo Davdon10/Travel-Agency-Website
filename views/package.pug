@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  .container
+    h1.p-3.mx-5 Packages
+      if listOfPackages
+        .row
+          each pack in listOfPackages
+            .card.bg-light.float-left.m-3
+              .card-body.text-right
+                //- img.rounded.float-left.card-img-top.mx-auto(src=pack.ImgPath style="max-width:400px;") 
+                img.rounded.float-left.card-img-top(src=pack.ImgPath style="max-width:400px mx-auto") 
+                .card-body.h3.card-title
+                <ul class="list-group">
+                  <li class="list-group-item active fs-5" aria-current="true">#{pack.PkgName} </li>
+                h6.card-text.py-3
+                  <li class="list-group-item">Description: #{pack.PkgDesc}</li>
+                  <li class="list-group-item">Start Date: #{pack.PkgStartDate}</li>
+                  <li class="list-group-item">End Date: #{pack.PkgEndDate}</li>
+                  <li class="list-group-item">$#{pack.PkgBasePrice} CAD</li>
+                  //- <li class="list-group-item">#{pack.PkgAgencyCommission} CAD</li>
+                  //- <li class="list-group-item">#{pack._id} ID</li>
+                </ul>
+                if currentUser && currentUser.role == 'customer'
+                  a.btn.btn-outline-success(href=add ? '/' : '/booking/add/' + (pack && pack._id)) Check it out!
+                if currentUser && currentUser.role == 'agent'
+                  a.btn.btn-outline-success(href=add ? '/' : '/booking/add/' + (pack && pack._id)) Check it out! 
+                  a.btn.btn-outline-info(href='/underconst') Create Package
+                if !currentUser
+                  .button.p-2
+                    a.btn.btn-outline-info.btn-lg(href='register') Register
+                    a.btn.btn-outline-secondary.btn-lg.mx-2(href='login') Log In
+              
+

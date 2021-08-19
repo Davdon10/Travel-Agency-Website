@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  //debug test
+  //- p #{pkg}
+  .container
+    
+      if !pkg
+        h3 No such package
+      else 
+        h2.bg-warning.text-center #{pkg && pkg.PkgName}
+        form(action='/booking/book' method='post')
+          .card.col-sm-12.p-2.mb-4
+            img.card-img-top.mx-auto(src=pkg.ImgPath style=" max-width:40%;")
+            .card-body.px-5
+                h3.card-title= pkg && pkg.PkgDesc
+                h5.card-text
+                  | Price: $#{pkg && pkg.PkgBasePrice} CAD
+                h6.card-text
+                  | Trip Start: #{pkg && pkg.PkgStartDate}
+                h6.card-text
+                  | Trip End: #{pkg && pkg.PkgEndDate}
+                p.card-text
+                //should the action here redirect to a confirmation page and then the customer's page to see all their packages
+            .row
+              .col-sm-6
+                h6.card-text.px-5
+                  | Number of travelers:
+                  label.form-label(for='TravelerCount')
+                  input#TravelerCount.mx-3(name='TravelerCount' type='number' min=1 value=1)
+                  input(type='hidden' name="PackageId" value=pkg && pkg.PackageId)
+                  input(type='hidden' name="PkgBasePrice" value=pkg && pkg.PkgBasePrice)
+                  input(type='hidden' name="PkgStartDate" value=pkg && pkg && pkg.PkgStartDate)
+                  input(type='hidden' name="PkgEndDate" value=pkg && pkg.PkgEndDate)
+                  input(type='hidden' name="CustomerId" value=currentUser && currentUser.userid)
+              .col-sm-6
+                button.btn.btn-success.col-9.m-2(type='submit') Book Now
+
+                    //edit and delete buttons should be for customer's page? This is only strictly for adding packages to their page first
+            //- p.card-text
+            //-   a.btn.btn-primary.col-12(href='/packge/edit/'+ pkg._id) Edit
+            //- p.card-text
+            //-   a.btn.btn-danger.col-12(href='/package/delete/'+ pkg._id) Delete
+

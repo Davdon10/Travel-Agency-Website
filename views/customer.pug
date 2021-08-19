@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 All Customers
+
+  form(method="GET" action="/register")
+    button.btn.btn-success(type="submit") Create
+
+  if blogPosts
+    each customer in custRegistrations
+      a(href="/register/" + customer.custLastName) #{customer.FirstName}
+      p= customer.postbody
+

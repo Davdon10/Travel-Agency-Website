@@ -1,0 +1,271 @@
+extends layout
+
+block content
+
+  // Picture Carousel
+  section#welcome.p-1
+    .container
+      h1.text-center.text-dark.mt-4 Welcome!
+      h1.lead.text-center.text-white.mb-4
+        | Fly with the Experts
+
+  // Picture Carousel
+  section#carousel.col-lg-12.col-md-12.bg-secondary.mt-0
+    #TECarousel.carousel.slide.carousel-fade(data-bs-ride='carousel')
+      .carousel-indicators
+        button.active(type='button' data-bs-target='#TECarousel' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='1' aria-label='Slide 2')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='2' aria-label='Slide 3')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='3' aria-label='Slide 4')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='4' aria-label='Slide 5')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='5' aria-label='Slide 6')
+      .carousel-inner
+        .carousel-item.active(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/andorra.jpg' alt='...')
+            .carousel-caption.d-none.d-md-block.text-center
+              h3 The intriguing Adriatic!
+              p.text-center
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo non maxime quas
+                | voluptas iusto autem ab neque deserunt fuga nesciunt! Pariatur cum omnis veniam,
+                | voluptatem quod repellendus tenetur vel rem?
+                | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, quo qui ratione id dolor
+                | error.
+        .carousel-item(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/bora-bora.jpg' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h3 Southeast Asia
+              p.text-center
+                | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, quo qui 
+        .carousel-item(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/corinth.jpg' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h3 Visit Turkey
+              p.text-center
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eum sequi unde.
+                | Est officiis error dolorem beatae aspernatur nobis aut deserunt sequi inventore,
+                | voluptatibus eligendi.
+        .carousel-item(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/ireland.jpg' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h3 Visit Ireland
+              p.text-center
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                | Eveniet harum totam reiciendis minus facere ex laudantium modi. Maxime, quam alias..
+        .carousel-item(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/newyork.jpg' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h3 New York, New York 
+              p.text-center
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                | Eveniet harum totam reiciendis minus facere ex laudantium modi. Maxime, quam alias..
+                | consequatur repellendus, obcaecati distinctio dolorem doloribus mollitia repudiandae.
+        .carousel-item(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/colorado10.jpg' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h3 Climb to the top of the world ...
+              p.text-center
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                | Eveniet harum totam reiciendis minus facere ex laudantium modi. Maxime, quam alias..
+      button.carousel-control-prev(type='button' data-bs-target='#TECarousel' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button' data-bs-target='#TECarousel' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+
+  // *** About us ****
+  section#learn.p-5.bg-light             
+    .container
+      h1 Tours, Resorts, Adventure.
+      h2 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      p
+      | Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+      | voluptas. Alias quo accusamus cum sequi quasi quaerat earum facere.
+      | Ex iusto, officia dolore cumque eaque laborum natus temporibus.
+      | Nobis odio veritatis id eius nostrum, corrupti numquam placeat
+      | doloremque commodi tenetur. Architecto molestias neque minima,
+      | possimus optio dolore vitae facere sunt deleniti, hic distinctio
+      | provident odio, laborum asperiores eum eveniet nemo ducimus itaque
+      | obcaecati expedita ipsam? Quam placeat optio, velit magnam, iusto
+      | eveniet enim omnis officiis inventore voluptatibus accusamus maxime
+      | repellat, nemo delectus incidunt sequi perspiciatis natus dicta alias
+      | sed ea. Aut error officiis fugit tenetur nobis? Ipsum sint
+      | cupiditate modi.
+      p
+      | Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum et fuga
+      | nostrum facilis voluptatum pariatur dolores libero maiores blanditiis
+      | dolorum, perspiciatis a excepturi ea unde quis at quaerat laborum,
+      | delectus est optio ipsam vitae rerum. Delectus nemo magnam aut
+      | reprehenderit. Alias, eveniet at. Minima, voluptatibus! Consectetur
+      | corporis vitae labore adipisci?
+
+  // *** Agents ****
+  section#agents.p-5
+    .container
+      h2.text-center.text-white Our Agents
+      p.lead.text-center.text.white.mb-5
+        | Our Senior Travel Agents are ready to help you reach
+        br
+        |                 your next dream destination. Make your appointment today!
+      .row.g-4
+        .col-md-6.col-lg-3
+          .card.bg-light
+            .card-body.text-center
+              img.square(src='https://randomuser.me/api/portraits/women/26.jpg' mb-3='' alt='')
+              h4.card-title.mb-3.mr-2 Catherine Hughes
+              p.card-text
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+                | excepturi
+                | eveniet esse quod explicabo magni!
+              a(href='#')
+                i.bi.bi-twitter.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-facebook.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-linkedin.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-instagram.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-telephone.text-dark.mx-1
+              p
+        .col-md-6.col-lg-3
+          .card.bg-light
+            .card-body.text-center
+              img.square(src='https://randomuser.me/api/portraits/men/67.jpg' mb-3='' alt='')
+              h4.card-title.mb-3 Paul Mason
+              p.card-text
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+                | excepturi
+                | eveniet esse quod explicabo magni!
+              a(href='#')
+                i.bi.bi-twitter.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-facebook.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-linkedin.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-instagram.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-telephone.text-dark.mx-1
+              p
+        .col-md-6.col-lg-3
+          .card.bg-light
+            .card-body.text-center
+              img.square(src='https://randomuser.me/api/portraits/men/28.jpg' mb-3='' alt='')
+              h4.card-title.mb-3 Doug Soko
+              p.card-text
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+                | excepturi
+                | eveniet esse quod explicabo magni!
+              a(href='#')
+                i.bi.bi-twitter.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-facebook.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-linkedin.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-instagram.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-telephone.text-dark.mx-1
+              p
+        .col-md-6.col-lg-3
+          .card.bg-light
+            .card-body.text-center
+              img.square(src='https://randomuser.me/api/portraits/women/35.jpg' mb-3='' alt='')
+              h4.card-title.mb-3 Sandra Jones
+              p.card-text
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+                | excepturi
+                | eveniet esse quod explicabo magni!
+              a(href='#')
+                i.bi.bi-twitter.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-facebook.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-linkedin.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-instagram.text-dark.mx-1
+              a(href='#')
+                i.bi.bi-telephone.text-dark.mx-1
+              p
+
+  // *** Accordion ****
+  .container.p-5
+    h2.text-center.mb-4 Frequently Asked Questions
+    #questions.accordion.accordion-flush
+      // Item 1
+      .accordion-item
+        h2.accordion-header
+          button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#question-one')
+            | There's something for everyone
+        #question-one.accordion-collapse.collapse(data-bs-parent='#questions')
+          .accordion-body
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            | beatae fuga animi distinctio perspiciatis adipisci velit maiores
+            | totam tempora accusamus modi explicabo accusantium consequatur,
+            | praesentium rem quisquam molestias at quos vero. Officiis ad
+            | velit doloremque at. Dignissimos praesentium necessitatibus
+            | natus corrupti cum consequatur aliquam! Minima molestias iure
+            | quam distinctio velit.
+      // Item 2
+      .accordion-item
+        h2.accordion-header
+          button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#question-two')
+            | The vacation you deserve
+        #question-two.accordion-collapse.collapse(data-bs-parent='#questions')
+          .accordion-body
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            | beatae fuga animi distinctio perspiciatis adipisci velit maiores
+            | totam tempora accusamus modi explicabo accusantium consequatur,
+            | praesentium rem quisquam molestias at quos vero. Officiis ad
+            | velit doloremque at. Dignissimos praesentium necessitatibus
+            | natus corrupti cum consequatur aliquam! Minima molestias iure
+            | quam distinctio velit.
+      // Item 3
+      .accordion-item
+        h2.accordion-header
+          button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#question-three')
+            | Our options carefully selected for you
+        #question-three.accordion-collapse.collapse(data-bs-parent='#questions')
+          .accordion-body
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            | beatae fuga animi distinctio perspiciatis adipisci velit maiores
+            | totam tempora accusamus modi explicabo accusantium consequatur,
+            | praesentium rem quisquam molestias at quos vero. Officiis ad
+            | velit doloremque at. Dignissimos praesentium necessitatibus
+            | natus corrupti cum consequatur aliquam! Minima molestias iure
+            | quam distinctio velit.
+      // Item 4
+      .accordion-item
+        h2.accordion-header
+          button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#question-four')
+            | Fun for everyone
+        #question-four.accordion-collapse.collapse(data-bs-parent='#questions')
+          .accordion-body
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            | beatae fuga animi distinctio perspiciatis adipisci velit maiores
+            | totam tempora accusamus modi explicabo accusantium consequatur,
+            | praesentium rem quisquam molestias at quos vero. Officiis ad
+            | velit doloremque at. Dignissimos praesentium necessitatibus
+            | natus corrupti cum consequatur aliquam! Minima molestias iure
+            | quam distinctio velit.
+      // Item 5
+      .accordion-item
+        h2.accordion-header
+          button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#question-five')
+            | Travel with ease
+        #question-five.accordion-collapse.collapse(data-bs-parent='#questions')
+          .accordion-body
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            | beatae fuga animi distinctio perspiciatis adipisci velit maiores
+            | totam tempora accusamus modi explicabo accusantium consequatur,
+            | praesentium rem quisquam molestias at quos vero. Officiis ad
+            | velit doloremque at. Dignissimos praesentium necessitatibus
+            | natus corrupti cum consequatur aliquam! Minima molestias iure
+            | quam distinctio velit.

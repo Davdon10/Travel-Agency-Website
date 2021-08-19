@@ -1,0 +1,9 @@
+extends layout
+
+block content
+
+    if customerRegistration
+        h3= customerRegistration.custFirstName
+        p= customerRegistration.custLastName
+
+    a(href="/register") Back

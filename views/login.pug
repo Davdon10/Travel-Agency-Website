@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1.p-2.mx-5= title
+  
+  // Login Form
+  form(action='/login-user' method="POST")
+    .form-floating.mx-5.py-2
+      input#username.form-control(type='text' placeholder='User Name' name='username' 
+      value=postdata && postdata.username)
+      label.form-label(for='username') User Name
+    .form-floating.mx-5.py-2
+      input#password.form-control(type='password' placeholder='Title' name='password')
+      label.form-label(for='password') Password
+    .button.mx-5.py-2
+      button.btn.btn-outline-success.mx-1(type='submit') Login
+      <a href="/" class="btn btn-outline-danger mx-1" role="button">Close</a>

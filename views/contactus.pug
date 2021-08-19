@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  h1.p-2.mx-5.text-center= title
+  // Company contact info section
+  section#learn.p-5.bg-light
+      .container
+          .row.algin-items-center.justify-content-between
+          .col-md
+              img.img-fluid.pt-5(src='/images/contactus_undraw.svg' alt='contact us graphic' class="contact-img")
+  section
+          .col-md.p-5
+              h2 Call our 24/7 toll free number:
+              p.lead
+              | 403-222-2222
+              br
+              |           246 Railway St.
+              br
+              |           Okotoks, AB T1Y 3C2
+              p
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+              | reiciendis eius autem eveniet mollitia, at asperiores suscipit
+              | quae similique laboriosam iste minus placeat odit velit quos,
+              | nulla architecto amet voluptates?
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+              | reiciendis eius autem eveniet mollitia, at asperiores suscipit
+              | quae similique laboriosam iste minus placeat odit velit quos,
+              | nulla architecto amet voluptates?
+          .button.mx-4
+            a.btn.btn-dark.m-3(href='mailto:bobbob@travelexperts.com')
+                i.bi.bi-chevron-right
+                | Email Us
+  .container.text-center.col-md
+    .col-md.p-5
+      h1.p-2.mx-5 Say Hello
+      form(method='POST' action='/contactus')
+          p
+          | Have questions? Need Help? 
+          br
+          | Your Feedback Makes a Difference! Tell us what you think
+          br
+          .form-floating.mx-5.py-2
+            input#fullname.form-control(type='text' placeholder='Please enter your full name' name='fullname' 
+            value=postdata && postdata.fullname)
+            label.form-label(for='fullname') Full Name
+          .form-floating.mx-5.py-2
+            input#email.form-control(type='text' placeholder='Please enter your email' name='email' 
+            value=postdata && postdata.email)
+            label.form-label(for='email') Email
+          .form-floating.mx-5.py-2
+            input#phone.form-control(type='text' placeholder='Please enter your telephone' name='phone' 
+            value=postdata && postdata.phone)
+            label.form-label(for='phone') Phone
+          .form-floating.mx-5.py-2
+            textarea#comments.form-control(placeholder='Leave a comment here' name='comments')= postdata && postdata.comments
+            label(for='comments') Your Comments
+          .button.mx-5.py-2
+              button.btn.btn-outline-success.mx-1(type='submit') Send
+              // <button class="btn btn-outline-primary" type="submit">Register</button>
+              button.btn.btn-outline-secondary.mx-1(type='reset') Clear
+              <a href="#" class="btn btn-outline-danger mx-1" role="button">Back to Top</a>

@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+:root {
+  --orange: #ffa500;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* text-transform: capitalize; */
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+*::selection {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* The above section was for testing purposes */
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body::before {
+  display: block;
+  content: "";
+  height: 120px;
+}
+
+/* contact page image sizing */
+.contact-img {
+  width: 75%;
+  height: auto;
+  margin: auto;
+}
+
+a {
+  color: #00b7ff;
+}
+
+header {
+  padding: 0px;
+  text-align: center;
+}
+
+td {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+section {
+  border: 0.4in;
+  background-color: rgb(191, 206, 168);
+}
+
+table {
+  border: 0.4in;
+  padding: 0in;
+  background-color: rgb(232, 240, 220);
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+}
+.packages .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.packages .box-container .box {
+  flex: 1 1 30rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.packages .box-container .box img {
+  height: 25rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.packages .box-container .box .content {
+  padding: 2rem;
+}
+
+.packages .box-container .box .content h3 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.packages .box-container .box .content h3 i {
+  color: var(--orange);
+}
+
+.packages .box-container .box .content p {
+  font-size: 1.7rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.packages .box-container .box .content .stars i {
+  font-size: 1.7rem;
+  color: var(--orange);
+}
+
+.packages .box-container .box .content .price {
+  font-size: 2rem;
+  color: #333;
+  padding-top: 1rem;
+}
+
+.packages .box-container .box .content .price span {
+  color: #666;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
